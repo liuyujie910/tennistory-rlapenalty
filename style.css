@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+Simplified+Chinese');
+
+::selection {
+  color: #000000;
+  background: #e0eeff;
+}
+
+body {
+  font-family: 'Noto Sans Simplified Chinese', sans-serif;
+  background: white;
+  font-weight: 400;
+  overflow: hidden;
+}
+
+body.switched {
+  transition: color 0.6s, background-color 0.6s;
+}
+
+h1,
+h2 {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #000;
+  font-size: 16pt;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 14pt;
+}
+
+.header {
+  padding-bottom: 2em;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #efeff0;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/*
+  Built-in class:
+    # author: Name
+*/
+.byline {
+  font-size: 10pt;
+  color: #0375ff;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* 
+  Enables <iframe> support work on itch.io when using mobile iOS
+*/
+
+.outerContainer {
+  position: absolute;
+  display: block;
+  -webkit-overflow-scrolling: touch;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 980px) {
+  .outerContainer {
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .container {
+    padding-top: 80px;
+  }
+}
+
+.container {
+  display: block;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.switched .container {
+  transition: background-color 0.6s;
+}
+
+p {
+  font-size: 12pt;
+  color: #3d3d3d;
+  line-height: 1.7em;
+  letter-spacing: 1px;
+}
+
+a {
+  color: #3d3d3d;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: #efeff0;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+a:hover {
+  color: #0375ff;
+  background-color: #e0eeff;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 4px;
+}
+
+strong {
+  color: black;
+  font-weight: bold;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.container .hide {
+  opacity: 0;
+}
+
+.container .invisible {
+  display: none;
+}
+
+.container > * {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+/*
+  Class applied to all choices
+  (Will always appear inside <p> element by default.)
+*/
+
+.choice {
+  text-align: center;
+  line-height: 1.7em;
+}
+
+/* 
+  Class applied to first choice
+*/
+
+:not(.choice) + .choice {
+  padding-top: 1em;
+}
+
+/*
+  Class applied to choice links
+*/
+.choice a {
+  display: block;
+  max-width: 100%;
+  text-align: center;
+  font-size: 12pt;
+  color: #0375ff;
+  background-color: #e0eeff;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 4px;
+}
+
+.choice a:hover {
+  color: white;
+  background-color: #0375ff;
+}
+
+/* 
+  Built-in class:
+    The End # CLASS: end
+*/
+.end {
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#controls {
+  z-index: 4;
+  font-size: 10pt;
+  text-align: center;
+  position: fixed;
+  right: 14px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  user-select: none;
+  background: white;
+  transition: color 0.6s, background 0.6s;
+  letter-spacing: 2px;
+}
+
+#controls [disabled] {
+  color: #d3d3d3;
+}
+
+#controls > *:not(:last-child):after {
+  content: '';
+}
+
+@media screen and (max-width: 980px) {
+  #controls {
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #efeff0;
+  }
+}
+
+/* 
+  Dark Theme (Added in Inky 0.10.0)
+    # theme: dark
+*/
+
+body.dark {
+  background: black;
+  color: white;
+}
+
+.dark h2 {
+  color: #000;
+}
+
+.dark .container {
+  background: black;
+}
+
+.dark .written-in-ink {
+  background: black;
+}
+
+.dark a {
+  color: #9a9a9a;
+  transition: color 0.6s;
+}
+
+.dark a:hover {
+  color: white;
+}
+
+.dark strong {
+  color: white;
+}
+
+.dark #controls [disabled] {
+  color: #444;
+}
+
+.dark .end {
+  color: white;
+}
+
+.dark #controls {
+  background: black;
+}
+
+.important {
+  color: #0375ff;
+}
+
+.hint {
+  color: #64b271;
+  font-size: 11pt;
+  background-color: #e0f0e3;
+  transition: color 0.1s;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.hint:before {
+  content: '【获得线索】';
+}
+
+.ending {
+  color: white;
+  font-size: 13pt;
+  font-weight: bold;
+  background-color: #000;
+  transition: color 0.1s;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.ending:before {
+  content: '【达成结局】';
+}
+
+.police {
+  display: block;
+  background-color: #efeff0;
+  color: #000000;
+  transition: color 0.1s;
+  line-height: 1.5em;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-radius: 20px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  max-width: 70%;
+}
+
+.police:before {
+  display: block;
+  content: '警员';
+  font-weight: 600;
+  letter-spacing: 2px;
+  max-width: max-content;
+  color: #8f8f90;
+  margin-bottom: 10px;
+}
+
+.player {
+  background-color: #0075ff;
+  color: #ffffff;
+  transition: color 0.1s;
+  line-height: 1.5em;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-radius: 20px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  margin-left: 30%;
+}
+
+.ostapenko {
+  display: block;
+  background-color: #feedc7;
+  color: #000000;
+  transition: color 0.1s;
+  line-height: 1.5em;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-radius: 20px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  max-width: 70%;
+}
+
+.ostapenko:before {
+  display: block;
+  content: '奥斯塔彭科';
+  font-weight: 600;
+  letter-spacing: 2px;
+  max-width: max-content;
+  color: #fcbc6b;
+  margin-bottom: 10px;
+}
+
+.ostapenko {
+  display: block;
+  background-color: #feedc7;
+  color: #000000;
+  transition: color 0.1s;
+  line-height: 1.5em;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-radius: 20px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  max-width: 70%;
+}
+
+.ostapenko:before {
+  display: block;
+  content: '奥斯塔彭科';
+  font-weight: 600;
+  letter-spacing: 2px;
+  max-width: max-content;
+  color: #fcbc6b;
+  margin-bottom: 10px;
+}
+
+.bencic {
+  display: block;
+  background-color: #efeff0;
+  color: #000000;
+  transition: color 0.1s;
+  line-height: 1.5em;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-radius: 20px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  max-width: 70%;
+}
+
+.bencic:before {
+  display: block;
+  content: '本西奇';
+  font-weight: 600;
+  letter-spacing: 2px;
+  max-width: max-content;
+  color: #8f8f90;
+  margin-bottom: 10px;
+}
+
+.iga {
+  display: block;
+  background-color: #efeff0;
+  color: #000000;
+  transition: color 0.1s;
+  line-height: 1.5em;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-radius: 20px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  max-width: 70%;
+}
+
+.iga:before {
+  display: block;
+  content: '斯维亚特克';
+  font-weight: 600;
+  letter-spacing: 2px;
+  max-width: max-content;
+  color: #8f8f90;
+  margin-bottom: 10px;
+}
+.coco {
+  display: block;
+  background-color: #efeff0;
+  color: #000000;
+  transition: color 0.1s;
+  line-height: 1.5em;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-radius: 20px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  max-width: 70%;
+}
+
+.coco:before {
+  display: block;
+  content: '高芙';
+  font-weight: 600;
+  letter-spacing: 2px;
+  max-width: max-content;
+  color: #8f8f90;
+  margin-bottom: 10px;
+}
